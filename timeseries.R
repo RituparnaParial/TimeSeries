@@ -113,8 +113,16 @@ plot(forecast(arima_model, 3), xlab = "Year", ylab = "Annual flow")
 # Automated Arima forecast
 auto_arima_model <- auto.arima(Nile)
 accuracy(auto_arima_model)
+
 qqnorm(auto_arima_model$residuals)
 qqline(auto_arima_model$residuals)
 
+# Plot information for predicted values
+plot(forecast(auto_arima_model, 3), 
+              xlab = "Year", 
+              ylab = "Annual flow")
+
+auto_arima_model
+arima_model
 
 
